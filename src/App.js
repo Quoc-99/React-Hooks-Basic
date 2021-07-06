@@ -1,13 +1,22 @@
+// import HomePage from './Pages/HomePage';
 import './App.scss';
-import ColorBox from './components/ColorBox';
+import { useState } from 'react';
+import Hero from './components/Hero';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Welcome to React Hooks!</h1>
-      <ColorBox />
-    </div>
-  );
+	const [count, setCount] = useState(0);
+
+	const handleHeroClick = () => {};
+
+	return (
+		<div className="App">
+			{/* <HomePage /> */}
+			<p>{count}</p>
+			<button onClick={() => setCount(count + 1)}>Increase</button>
+
+			<Hero onClick={handleHeroClick} name="Easy Frontend" />
+		</div>
+	);
 }
 
 export default App;
